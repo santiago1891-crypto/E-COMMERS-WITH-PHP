@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bodega Online - Venta de Vinos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="imagenes/logo_redondeado.png" type="image/png">
+
+    <!--Boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+
+    <!---Sweatalert 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+<!--Barra de navegacion-->
+<head>
+    <nav class=" navbar navbar-expand-lg fixed-top bg.light">
+        <div class="container-fluid ">
+        <img  src="imagenes/logo_redondeado.png" alt="Logo"  class="img-logo d-inline-block align-text-top">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-light"  href="#inicio">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#about">Nuestra Historia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#tienda">Tienda</a>
+                </li>
+        
+                <li class="nav-item">
+                    <button type="button" class="btn-nav btn-primary" data-bs-toggle="modal" data-bs-target="#modal_ingreso" data-bs-whatever="@mdo">Iniciar Sesion</button>
+                </li>
+
+                <li class="nav-item">
+                    <button type="button" class="btn-nav btn-primary" data-bs-toggle="modal" data-bs-target="#modal_registro" data-bs-whatever="@mdo">Registrarse</button>
+                </li>
+            </ul>
+        </div> 
+    </nav>
+</head>
+
+
+    <main id="contenido">
+        <!--Modal Iniciar Sesion-->
+    <div class="modal fade" id="modal_ingreso" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Iniciar sesión</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <form action="login.php" method="post">
+                    <label for="usuario" class="col-form-label">Nombre de usuario:</label>
+                    <input type="text" name="usuario" class="form-control" id="usuario" required>
+
+                    <label for="Constraseña class="col-form-label">Contraseña:</label>
+                    <input type="password" name="contraseña" class="form-control" id="Constraseña" required>  
+
+                    
+                    <button type="submit" name="iniciar_sesion" value="ingresar" class="btn_form_enviar btn-primary">Iniciar Sesion</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--modal Registro-->
+    <div class="modal fade modal-lg" id="modal_registro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Registartre Ahora</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="registro.php" method="post">
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Nombre de usuario*:</label>
+                    <input type="text" required name="nombre_usuario" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="message-text" class="col-form-label">Constraseña*:</label>
+                    <input type="password" required name="contraseña" class="form-control">  
+                </div>
+                
+                <fieldset>
+                        <legend>Informacion Personal</legend>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Nombre*:</label>
+                            <input type="text" required name="nombre" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Apellido*:</label>
+                            <input type="text" required name="apellido" class="form-control">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">ciudad*:</label>
+                            <input type="text" required name="ciudad" class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">calle*:</label>
+                            <input type="text" required name="calle" class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">numero de puerta*:</label>
+                            <input type="number" name="n_puerta" class="form-control">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">telefono*:</label>
+                            <input type="number" required name="telefono" class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">email*:</label>
+                            <input type="email" required name="email" class="form-control">
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="submit" value="registrarse" class="btn_form_enviar btn-primary">Registrarse</button>
+                        </div>
+                    </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+
+    <!--HERO-->
+    <section class="hero_content" id="inicio">
+    <h2 class="title_content">SOMOS BODEGAS S.A SAUCE</h2>
+
+    <p class="p_hero">
+    Bienvenido a Bodegas S.A Sauce, donde la tradición y la pasión por el vino se unen para ofrecerte productos de la más alta calidad. Descubre nuestra historia, explora nuestra tienda y déjate sorprender por la excelencia de nuestros vinos artesanales.
+    </p>
+
+    <a class="hero_a" href="#tienda">Ir a la tienda</a>
+    </section>
+
+    <!--ABOUT-->
+    <section id="about" class="section_historia">
+        <div class="historia_container">
+            <div class="historia_texto">
+                <h2>Nuestra Historia</h2>
+                    <p>
+                        Bodegas S.A Sauce nació hace más de 50 años en el corazón de nuestra región, con la pasión de una familia dedicada al arte del vino. Desde nuestros inicios, hemos trabajado la tierra con respeto y dedicación, seleccionando las mejores uvas para crear vinos únicos que reflejan la esencia de nuestro terruño.<br><br>
+                        A lo largo de las décadas, nuestra bodega ha crecido y evolucionado, incorporando tecnología de vanguardia sin perder la tradición que nos caracteriza. Cada botella cuenta una historia de esfuerzo, innovación y amor por el vino.<br><br>
+                        Hoy, Bodegas S.A Sauce es reconocida por su calidad y compromiso, llevando nuestros productos a mesas de todo el país y el mundo. Te invitamos a conocer más sobre nuestro legado y a disfrutar de una experiencia única en cada copa.
+                    </p>
+            </div>
+                <div class="historia_imagenes">
+                    <img  loading="lazy" src="imagenes/img-about1.png" alt="Barricas">
+                    <img  loading="lazy" src="imagenes/img-about2.png" alt="Fanrica de la bodega">
+                    <img  loading="lazy" src="imagenes/img-about3.png" alt="Viñedos">
+                </div>
+        </div>
+    </section>
+
+
+    <!--TIENDA-->
+    <article id="tienda" class="article_tienda">      
+    <h2 class="title_carrito">Tienda</h2> 
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner" id="productos-tienda">
+            <!-- Aquí se cargan los carousel-item por JS -->
+        </div>
+        <button class="btn-carrusel carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="btn-carrusel carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</article>
+</main>
+
+<!--Fotter-->
+<footer>
+        <div class="content_redes">
+            <a target="_blank" href"">
+                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="auto" preserveAspectRatio="xMidYMid" viewBox="0 0 256 256"><path fill="#fff" d="M128 23.064c34.177 0 38.225.13 51.722.745 12.48.57 19.258 2.655 23.769 4.408 5.974 2.322 10.238 5.096 14.717 9.575 4.48 4.479 7.253 8.743 9.575 14.717 1.753 4.511 3.838 11.289 4.408 23.768.615 13.498.745 17.546.745 51.723 0 34.178-.13 38.226-.745 51.723-.57 12.48-2.655 19.257-4.408 23.768-2.322 5.974-5.096 10.239-9.575 14.718-4.479 4.479-8.743 7.253-14.717 9.574-4.511 1.753-11.289 3.839-23.769 4.408-13.495.616-17.543.746-51.722.746-34.18 0-38.228-.13-51.723-.746-12.48-.57-19.257-2.655-23.768-4.408-5.974-2.321-10.239-5.095-14.718-9.574-4.479-4.48-7.253-8.744-9.574-14.718-1.753-4.51-3.839-11.288-4.408-23.768-.616-13.497-.746-17.545-.746-51.723 0-34.177.13-38.225.746-51.722.57-12.48 2.655-19.258 4.408-23.769 2.321-5.974 5.095-10.238 9.574-14.717 4.48-4.48 8.744-7.253 14.718-9.575 4.51-1.753 11.288-3.838 23.768-4.408 13.497-.615 17.545-.745 51.723-.745M128 0C93.237 0 88.878.147 75.226.77c-13.625.622-22.93 2.786-31.071 5.95-8.418 3.271-15.556 7.648-22.672 14.764C14.367 28.6 9.991 35.738 6.72 44.155 3.555 52.297 1.392 61.602.77 75.226.147 88.878 0 93.237 0 128c0 34.763.147 39.122.77 52.774.622 13.625 2.785 22.93 5.95 31.071 3.27 8.417 7.647 15.556 14.763 22.672 7.116 7.116 14.254 11.492 22.672 14.763 8.142 3.165 17.446 5.328 31.07 5.95 13.653.623 18.012.77 52.775.77s39.122-.147 52.774-.77c13.624-.622 22.929-2.785 31.07-5.95 8.418-3.27 15.556-7.647 22.672-14.763 7.116-7.116 11.493-14.254 14.764-22.672 3.164-8.142 5.328-17.446 5.95-31.07.623-13.653.77-18.012.77-52.775s-.147-39.122-.77-52.774c-.622-13.624-2.786-22.929-5.95-31.07-3.271-8.418-7.648-15.556-14.764-22.672C227.4 14.368 220.262 9.99 211.845 6.72c-8.142-3.164-17.447-5.328-31.071-5.95C167.122.147 162.763 0 128 0Zm0 62.27C91.698 62.27 62.27 91.7 62.27 128c0 36.302 29.428 65.73 65.73 65.73 36.301 0 65.73-29.428 65.73-65.73 0-36.301-29.429-65.73-65.73-65.73Zm0 108.397c-23.564 0-42.667-19.103-42.667-42.667S104.436 85.333 128 85.333s42.667 19.103 42.667 42.667-19.103 42.667-42.667 42.667Zm83.686-110.994c0 8.484-6.876 15.36-15.36 15.36-8.483 0-15.36-6.876-15.36-15.36 0-8.483 6.877-15.36 15.36-15.36 8.484 0 15.36 6.877 15.36 15.36Z"/></svg>
+            </a>
+
+            <a target="_blank" href="">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="url(#a)" height="40" width="40"><defs><linearGradient x1="50%" x2="50%" y1="97.078%" y2="0%" id="a"><stop offset="0%" stop-color="#0062E0"/><stop offset="100%" stop-color="#19AFFF"/></linearGradient></defs><path d="M15 35.8C6.5 34.3 0 26.9 0 18 0 8.1 8.1 0 18 0s18 8.1 18 18c0 8.9-6.5 16.3-15 17.8l-1-.8h-4l-1 .8z"/><path fill="#FFF" d="m25 23 .8-5H21v-3.5c0-1.4.5-2.5 2.7-2.5H26V7.4c-1.3-.2-2.7-.4-4-.4-4.1 0-7 2.5-7 7v4h-4.5v5H15v12.7c1 .2 2 .3 3 .3s2-.1 3-.3V23h4z"/></svg>
+            </a>
+
+            <a target="_blank" href="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1227" fill="none" viewBox="0 0 1200 1227"><path fill="#fff" d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"/></svg>
+            </a>
+        </div>
+        
+        <p>&copy; 2025  By BitsMaster. Todos los derechos reservados.</p>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    function cargarProductosPublico() {
+        fetch('ver_productos_publico.php')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('productos-tienda').innerHTML = html;
+            });
+    }
+    cargarProductosPublico();
+
+    const params = new URLSearchParams(window.location.search);
+
+    // Registro existente (ya tenías esto)
+    if (params.get('registro') === 'existe') {
+        Swal.fire({
+            icon: 'error',
+            title: '¡Ya tienes una cuenta!',
+            text: 'El usuario o email ya está registrado. Por favor, inicia sesión o usa otro email.',
+            confirmButtonText: 'OK'
+        });
+    }
+
+    // Login: contraseña incorrecta
+    if (params.get('login') === 'wrong_password') {
+        Swal.fire({
+            icon: 'error',
+            title: 'Contraseña incorrecta',
+            text: 'La contraseña no coincide. Por favor inténtalo de nuevo.',
+            confirmButtonText: 'OK'
+        });
+    }
+
+    // Login: usuario no encontrado
+    if (params.get('login') === 'user_not_found') {
+        Swal.fire({
+            icon: 'error',
+            title: 'Usuario no encontrado',
+            text: 'No existe una cuenta con ese usuario. Regístrate primero.',
+            confirmButtonText: 'OK'
+        });
+    }
+
+    // Otros posibles errores
+    if (params.get('login') === 'missing_fields') {
+        Swal.fire({ icon: 'warning', title: 'Faltan datos', text: 'Completa usuario y contraseña.', confirmButtonText: 'OK' });
+    }
+    if (params.get('login') === 'error_db' || params.get('login') === 'error_query') {
+        Swal.fire({ icon: 'error', title: 'Error', text: 'Error interno, intenta más tarde.', confirmButtonText: 'OK' });
+    }
+    if (params.get('login') === 'no_role') {
+        Swal.fire({ icon: 'info', title: 'Sin rol', text: 'Tu cuenta no tiene rol asignado.', confirmButtonText: 'OK' });
+    }
+
+    // Limpiar parámetros para que la alerta no vuelva al recargar
+    if (params.toString()) {
+        const newUrl = window.location.pathname;
+        window.history.replaceState({}, document.title, newUrl);
+    }
+});
+</script>
+</body>
+</html>
