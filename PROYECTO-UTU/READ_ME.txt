@@ -1,33 +1,19 @@
-Nombre del equipo:BitsMasters 
-Integrantes:
+--SYSTEM FEATURES
 
-*Michel Abbona
+User and administrator login
+User registration
+User activation and deactivation (administrators only)
+Product editing (administrators only)
+Shopping cart (regular users only)
+PDF invoice generation (regular users only)
+User profile editing (only by the user)
 
-*Santiago Nolla
+--SYSTEM CREDENTIALS
+For administrators
+User: admin
+Password: admin
 
-*Joaquin Berrel
-
-*Franco Berrel
-
-
---FUNCIONALIDADES DEL SISTEMA
-    *Login de usuarios y administradores
-    *Registro de usuarios
-    *Alta y baja  de usuarios (solo para administradores)
-    *Edicion  de productos (solo para administradores)
-    *Carrito de compras (solo para usuarios comunes)
-    *Generacion de factura en PDF (solo para usuarios comunes)
-    *Edicion de usuarios(Solo por el usuario)
-
-
---CREDENCIALES DEL SISTEMA 
-
-*Para administraodres
-    -user: admin
-    -pw: admin
-
-
---Frameworks y librerias utilizadas 
+--Frameworks and Libraries Used 
 
 *bootstrap 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
